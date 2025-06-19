@@ -1,0 +1,36 @@
+/.idea/
+/target/
+
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+.mvn
+*.
+lib/
+logs/*
+/src/test/java/generator/MybatisPlusGenerator.java
+/src/main/resources/application-test.yml
+/src/main/resources/application-load.yml
