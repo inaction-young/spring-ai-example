@@ -1,8 +1,12 @@
+
 spring:
   application:
     name: spring-ai-example
-
-
+  ai:
+    deepseek:
+      api-key: ${DEEPSEEK_KEY}
+    openai:
+      api-key: ${OPENAI_KEY}
 
 
 
