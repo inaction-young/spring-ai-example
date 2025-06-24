@@ -31,7 +31,4 @@ build/
 *.
 lib/
 logs/*
-/src/test/java/generator/MybatisPlusGenerator.java
-/src/main/resources/application-test.yml
-/src/main/resources/application-load.yml
 /src/test/java/resource/application.yaml

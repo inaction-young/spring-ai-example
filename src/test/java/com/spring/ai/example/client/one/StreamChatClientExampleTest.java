@@ -1,8 +1,6 @@
-package com.spring.ai.example.client;
+package com.spring.ai.example.client.one;
 
 
-import com.spring.ai.example.client.one.MultiChatClientExample;
-import com.spring.ai.example.client.one.StreamChatClientExample;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
