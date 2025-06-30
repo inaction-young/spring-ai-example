@@ -1,8 +1,7 @@
 package com.spring.ai.example.client.two;
 
 
-import com.google.common.collect.Lists;
-import com.spring.ai.example.client.record.JdkVersionResponse;
+import com.spring.ai.example.client.two.record.JdkVersionResponse;
 import com.spring.ai.example.utils.ConvertorUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

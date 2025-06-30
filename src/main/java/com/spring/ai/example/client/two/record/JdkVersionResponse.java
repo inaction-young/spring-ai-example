@@ -1,4 +1,4 @@
-package com.spring.ai.example.client.record;
+package com.spring.ai.example.client.two.record;
 
 
 import java.time.LocalDate;
