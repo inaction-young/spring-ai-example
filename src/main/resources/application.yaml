@@ -8,5 +8,9 @@ spring:
     openai:
       api-key: ${OPENAI_KEY}
 
-
+# 开启 DifyApiClient 的加载
+dify:
+  enable: true
+  api:
+    key: ${DIFY_API_KEY}
 

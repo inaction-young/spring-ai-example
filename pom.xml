@@ -83,6 +83,16 @@
 			<artifactId>jackson-datatype-jsr310</artifactId>
 			<version>2.19.0</version>
 		</dependency>
+
+		<!--	chat-dify 是作者以前本地打出来的包，只有本地仓库存在，远程是没有的。 	-->
+		<!--	所以如果是是从Github拉下来的代码，请将下面的 dependency 注释掉。 	-->
+		<!--	释掉后，com.spring.ai.example.models 包下的案例会出现找不到类的报错 	-->
+		<!--	请将项目根目录下/lib目录中 chat-dify-spring-boot-starter-1.0.0-SNAPSHOT.jar 导入到本地环境即可 	-->
+		<dependency>
+			<groupId>com.ai.chat</groupId>
+			<artifactId>chat-dify-spring-boot-starter</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

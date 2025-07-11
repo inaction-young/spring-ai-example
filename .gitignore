@@ -29,6 +29,5 @@ build/
 .vscode/
 .mvn
 *.
-lib/
 logs/*
 /src/test/java/resource/application.yaml
