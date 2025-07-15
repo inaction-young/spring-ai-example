@@ -1,6 +1,7 @@
 package com.spring.ai.example.tools;
 
 
+import com.spring.ai.example.tools.four.UserTravelToolCallingExample;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,20 +15,22 @@ import java.util.Scanner;
  * @date 2025年07月09日 15:54
  */
 @SpringBootTest
-public class UserTravelToolsExampleTest {
+public class UserTravelToolCallingExampleTest {
 
     @Resource
-    private UserTravelToolsExample userTravelToolsExample;
+    private UserTravelToolCallingExample userTravelToolCallingExample;
 
     @Test
     public void example() throws InterruptedException {
-        String firstToolsExampleResult = userTravelToolsExample.firstToolsExample("我准备去杭州游玩3-5天，你有什么建议吗？", true);
+        System.out.println("系统提示：输入你的需求！");
+        Scanner scanner = new Scanner(System.in);
+        String firstToolsExampleResult = userTravelToolCallingExample.firstToolsExample(scanner.nextLine(), true);
         System.out.println(firstToolsExampleResult);
 
-        Scanner scanner = new Scanner(System.in);
+
         while (true) {
             String line = scanner.nextLine();;
-            String continueToolsExampleResult = userTravelToolsExample.continueToolsExample(line);
+            String continueToolsExampleResult = userTravelToolCallingExample.continueToolsExample(line);
             System.out.println(continueToolsExampleResult);
         }
     }

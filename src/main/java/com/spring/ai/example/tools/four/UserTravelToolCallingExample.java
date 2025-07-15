@@ -1,8 +1,8 @@
-package com.spring.ai.example.tools;
+package com.spring.ai.example.tools.four;
 
 
 import com.spring.ai.example.advisor.three.AdvisorOrders;
-import com.spring.ai.example.utils.ConvertorUtils;
+import com.spring.ai.example.tools.four.recode.UserInfo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -21,7 +21,7 @@ import java.util.Map;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class UserTravelToolsExample {
+public class UserTravelToolCallingExample {
 
     private final ChatMemory chatMemory;
 
@@ -29,7 +29,7 @@ public class UserTravelToolsExample {
 
     private String SYSTEM = """
             你是一个定制旅游规划师，请根据用户的需求为用户规划旅游行程计划。
-            必须要在用户同意的情况下才可以获取用户的喜好。
+            必须要在用户同意的情况下才可以获取用户的喜好及信息。
             如果用户对你的计划非常感兴趣或者满意，需要询问用户是否需要将计划内容通过短信发送给用户。
             必须要在得到用户的肯定后，才可以将计划内容发送给用户。
             发送成功后询问用户出行方式，如果是公共出行则提示用户可以帮忙预订火车票或机票。
@@ -37,24 +37,20 @@ public class UserTravelToolsExample {
             在用户确定航班后直接为用户预订火车票或机票创建订单并返回支付链接。
             """;
     private String USER = """
-            用户是否允许获取喜好：%s
+            用户是否允许获取个人信息及喜好：%s
             用户需求：
-            ```%s```
-            用户信息：
             ```%s```
             """;
 
-    public String firstToolsExample(String input, boolean getUserPreference) {
+    public String firstToolsExample(String input, boolean getUserInfo) {
         return toolsClient.prompt()
                 .system(SYSTEM)
                 .user(String.format(
                         USER,
-                        getUserPreference ? "是" : "否",
-                        input,
-                        ConvertorUtils.toJsonString(Map.of(
-                                "userId", "u_123456789",
-                                "userName", "旋风小子"))))
-                .tools(new UserTools(), new TravelTools())
+                        getUserInfo ? "是" : "否",
+                        input))
+                .tools(new UserToolCalling(), new TravelToolCalling())
+                .toolContext(Map.of("userInfo", new UserInfo("u_123456789", "旋风小子")))
                 .advisors(MessageChatMemoryAdvisor.builder(chatMemory)
                         .order(AdvisorOrders.LogExample.getOrder() - 10)
                         .build())
@@ -66,7 +62,8 @@ public class UserTravelToolsExample {
         return toolsClient.prompt()
                 .system(SYSTEM)
                 .user(input)
-                .tools(new UserTools(), new TravelTools())
+                .tools(new UserToolCalling(), new TravelToolCalling())
+                .toolContext(Map.of("userInfo", new UserInfo("u_123456789", "旋风小子")))
                 .advisors(MessageChatMemoryAdvisor.builder(chatMemory)
                         .order(AdvisorOrders.LogExample.getOrder() - 10)
                         .build())

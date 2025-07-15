@@ -53,6 +53,7 @@ public class MethodToolsExample {
         String content = toolsClient.prompt()
                 .user("上海海拔高不高嘛？")
                 .tools(new MockWeatherTools())
+                // 通过上下文设置返回的高度
                 .toolContext(Map.of("altitude", 18.8))
                 .call()
                 .content();

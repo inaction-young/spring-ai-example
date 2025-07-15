@@ -1,7 +1,6 @@
-package com.spring.ai.example.tools.one;
+package com.spring.ai.example.tools.two;
 
 
-import com.spring.ai.example.tools.two.BeanFuncToolsExample;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
