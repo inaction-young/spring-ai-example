@@ -29,7 +29,7 @@ public class UserTravelToolCallingExampleTest {
 
 
         while (true) {
-            String line = scanner.nextLine();;
+            String line = scanner.nextLine();
             String continueToolsExampleResult = userTravelToolCallingExample.continueToolsExample(line);
             System.out.println(continueToolsExampleResult);
         }
