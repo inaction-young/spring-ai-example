@@ -1,4 +1,4 @@
-package com.spring.ai.example.models;
+package com.spring.ai.example.models.one;
 
 
 import com.ai.chat.dify.core.client.DifyApiClient;
