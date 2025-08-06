@@ -1,6 +1,7 @@
 package com.spring.ai.example.models;
 
 
+import com.spring.ai.example.models.three.ImageModelExample;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

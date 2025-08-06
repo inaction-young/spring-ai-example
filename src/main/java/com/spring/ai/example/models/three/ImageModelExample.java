@@ -1,4 +1,4 @@
-package com.spring.ai.example.models;
+package com.spring.ai.example.models.three;
 
 
 import lombok.RequiredArgsConstructor;
@@ -34,7 +34,4 @@ public class ImageModelExample {
                         .build()));
         log.info("\nImage model response -> \n{}", imageResponse);
     }
-
-
-
 }

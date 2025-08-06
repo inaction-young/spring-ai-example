@@ -1,4 +1,4 @@
-package com.spring.ai.example.models;
+package com.spring.ai.example.models.three;
 
 
 import lombok.RequiredArgsConstructor;
@@ -33,6 +33,4 @@ public class EmbeddingModelExample {
                                 .build()));
         log.info("\nEmbedding model response -> \n{}", embeddingResponse);
     }
-
-
 }
