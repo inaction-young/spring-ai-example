@@ -26,6 +26,7 @@ public class ChatMemoryClientConfiguration {
                 // 最大5条聊天记录
                 .maxMessages(5)
                 .build();
+
         // 自动从 chatMemory 增加&检索记忆的 Advisor
         MessageChatMemoryAdvisor chatMemoryAdvisor = MessageChatMemoryAdvisor.builder(chatMemory)
                 // 优先级高一些
