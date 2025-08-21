@@ -21,12 +21,12 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ChatMemoryExample {
 
-private final ChatClient chatMemoryClient;
-private final String system = """
-                    You are an assistant and need to proactively greet users.
-                    The user information is as follows:
-                    ```nickname: %s```
-                    """;
+    private final ChatClient chatMemoryClient;
+    private final String system = """
+                        You are an assistant and need to proactively greet users.
+                        The user information is as follows:
+                        ```nickname: %s```
+                        """;
     public String createChat() {
         // 生成一个huihuaID
         String cid = UUID.randomUUID().toString();

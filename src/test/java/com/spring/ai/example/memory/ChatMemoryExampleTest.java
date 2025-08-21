@@ -27,4 +27,16 @@ public class ChatMemoryExampleTest {
             chatMemoryExample.chatMemoryExample(scanner.nextLine(), cid);
         }
     }
+
+    @Resource
+    private JdbcChatMemoryExample jdbcChatMemoryExample;
+
+    @Test
+    public void jdbcChatMemoryExample() {
+        String cid = jdbcChatMemoryExample.createChat();
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            jdbcChatMemoryExample.chatMemoryExample(scanner.nextLine(), cid);
+        }
+    }
 }

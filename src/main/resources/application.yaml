@@ -1,5 +1,20 @@
 
 spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_UN}
+    password: ${DB_PWD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      connection-test-query: SELECT 1 FROM DUAL
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: SpringAiExampleHikariCP
+      max-lifetime: 60000
+      connection-timeout: 30000
   application:
     name: spring-ai-example
   ai:
@@ -7,6 +22,12 @@ spring:
       api-key: ${DEEPSEEK_KEY}
     openai:
       api-key: ${OPENAI_KEY}
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: never
+            #schema: classpath:schema/AI_CHAT_MEMORY.sql
 
 # 开启 DifyApiClient 的加载
 dify:
